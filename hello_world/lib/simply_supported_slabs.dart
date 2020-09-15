@@ -67,15 +67,24 @@ class _SimplySupportedSlabsState extends State<SimplySupportedSlabs> {
         // return object of type Dialog
         return AlertDialog(
           title: new Text("ANSWERS"),
-          content: Column(
+          content: SingleChildScrollView(
+          child:Column(
             children: [
+              
               Text('Area of steel in X-direction = $astx mm2'),
+              Divider(),
               Text('Provide $dia mm dia bars @ $sP1 mm c/c'),
+              Divider(),
               Text('Area of steel in Y-direction = $asty mm2'),
+              Divider(),
               Text('Provide $dia mm dia bars @ $sP2 mm c/c'),
+              Divider(),
               Text('Torsion Reinforcement at corners = $ast_T mm2'),
+              Divider(),
               Text('Size of mesh at corners for Torsion Reinforcement = $sM m'),
+              Divider(),
             ],
+          ),
           ),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog

@@ -56,32 +56,32 @@ class _RestrainedSlabsState extends State<RestrainedSlabs> {
       mu.sort();
       double mu_Max = mu[3];
       double dSR1 = pow((((mu_Max * pow(10, 6)) / (ru * 1000))), 0.5);
-      double k1 = ((4.6 * mux_N * pow(10, 6)) / (fck * 1000 * dSP2 * dSP2));
-      double k2 = (1 - (pow((1 - k1), 0.5))) * 1000 * dSP2;
+      double k1 = ((4.6 * mux_N * pow(10, 6)) / (fck * 1000 * dSP * dSP));
+      double k2 = (1 - (pow((1 - k1), 0.5))) * 1000 * dSP;
       double astx_N = 0.5 * (fck / fy) * k2;
       double p1 = ((3.1416 / 4) * dia * dia / astx_N) * 1000;
       double sp1 = ((p1 ~/ 10) * 10).toDouble() - 10;
       if (sp1 > 300) {
         sp1 = 300;
       }
-      double k3 = ((4.6 * mux_P * pow(10, 6)) / (fck * 1000 * dSP2 * dSP2));
-      double k4 = (1 - pow((1 - k3), 0.5)) * 1000 * dSP2;
+      double k3 = ((4.6 * mux_P * pow(10, 6)) / (fck * 1000 * dSP * dSP));
+      double k4 = (1 - pow((1 - k3), 0.5)) * 1000 * dSP;
       double astx_P = 0.5 * (fck / fy) * k4;
       double p2 = ((3.1416 / 4) * dia * dia / astx_P) * 1000;
       double sp2 = ((p2 ~/ 10) * 10).toDouble() - 10;
       if (sp2 > 300) {
         sp2 = 300;
       }
-      double k5 = ((4.6 * muy_N * pow(10, 6)) / (fck * 1000 * dSP2 * dSP2));
-      double k6 = (1 - pow((1 - k5), 0.5)) * 1000 * dSP2;
+      double k5 = ((4.6 * muy_N * pow(10, 6)) / (fck * 1000 * dSP * dSP));
+      double k6 = (1 - pow((1 - k5), 0.5)) * 1000 * dSP;
       double asty_N = 0.5 * (fck / fy) * k6;
       double p3 = ((3.1416 / 4) * dia * dia / asty_N) * 1000;
       double sp3 = ((p3 ~/ 10) * 10).toDouble() - 10;
       if (sp3 > 300) {
         sp3 = 300;
       }
-      double k7 = ((4.6 * muy_P * pow(10, 6)) / (fck * 1000 * dSP2 * dSP2));
-      double k8 = (1 - pow((1 - k7), 0.5)) * 1000 * dSP2;
+      double k7 = ((4.6 * muy_P * pow(10, 6)) / (fck * 1000 * dSP * dSP));
+      double k8 = (1 - pow((1 - k7), 0.5)) * 1000 * dSP;
       double asty_P = 0.5 * (fck / fy) * k8;
       double p4 = ((3.1416 / 4) * dia * dia / asty_P) * 1000;
       double sp4 = ((p1 ~/ 10) * 10).toDouble() - 10;
@@ -90,7 +90,6 @@ class _RestrainedSlabsState extends State<RestrainedSlabs> {
       }
       double ast_T = 0.75 * astx_P;
       double sm = lx / 5;
-      print('Anurag');
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -101,17 +100,25 @@ class _RestrainedSlabsState extends State<RestrainedSlabs> {
               child: Column(
                 children: [
                   Text('Area of steel in X-direction (-ve) = $astx_N mm2'),
+                  Divider(),
                   Text('Provide $dia mm dia bars @  $sp1 mm c/c'),
+                  Divider(),
                   Text('Area of steel in X-direction (+ve) = $astx_P mm2'),
+                  Divider(),
                   Text('Provide $dia mm dia bars @ $sp2 mm c/c'),
+                  Divider(),
                   Text('Area of steel in Y-direction (-ve) = $asty_N mm2'),
+                  Divider(),
                   Text('Provide $dia mm dia bars @ $sp3 mm c/c'),
+                  Divider(),
                   Text('Area of steel in Y-direction (+ve) = $asty_P mm2'),
+                  Divider(),
                   Text('Provide $dia mm dia bars @ $sp4 mm c/c'),
+                  Divider(),
                   Text('Torsion Reinforcement at corners = $ast_T mm2'),
-                  Text(
-                      'Size of mesh at corners for Torsion Reinforcement = $sm m'),
-                  Text('****** End of the Output Results ******'),
+                  Divider(),
+                  Text('Size of mesh at corners for Torsion Reinforcement = $sm m'),
+                  Divider(),
                 ],
               ),
             ),
