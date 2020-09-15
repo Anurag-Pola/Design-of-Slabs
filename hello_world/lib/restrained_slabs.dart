@@ -117,7 +117,8 @@ class _RestrainedSlabsState extends State<RestrainedSlabs> {
                   Divider(),
                   Text('Torsion Reinforcement at corners = $ast_T mm2'),
                   Divider(),
-                  Text('Size of mesh at corners for Torsion Reinforcement = $sm m'),
+                  Text(
+                      'Size of mesh at corners for Torsion Reinforcement = $sm m'),
                   Divider(),
                 ],
               ),
@@ -151,7 +152,7 @@ class _RestrainedSlabsState extends State<RestrainedSlabs> {
                   decoration: InputDecoration(
                     labelText: 'Short span of the slab in m ',
                   ),
-                  onChanged: (value) {
+                  onSaved: (value) {
                     lx = double.parse(value);
                   },
                   keyboardType: TextInputType.number,
