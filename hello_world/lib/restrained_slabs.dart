@@ -152,7 +152,7 @@ class _RestrainedSlabsState extends State<RestrainedSlabs> {
                   decoration: InputDecoration(
                     labelText: 'Short span of the slab in m ',
                   ),
-                  onSaved: (value) {
+                  onChanged: (value) {
                     lx = double.parse(value);
                   },
                   keyboardType: TextInputType.number,

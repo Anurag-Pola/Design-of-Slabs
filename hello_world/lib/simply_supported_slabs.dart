@@ -22,7 +22,6 @@ class _SimplySupportedSlabsState extends State<SimplySupportedSlabs> {
   void solution() {
     if (_form2.currentState.validate()) {
       _form2.currentState.save();
-      print(' $lx $ly $fck $fy $ll $dia $alphax $alphay');
       double ar = ly / lx;
       double dSR = (lx * 1000) / 20;
       double dSR2 = dSR + 20;
@@ -31,6 +30,7 @@ class _SimplySupportedSlabsState extends State<SimplySupportedSlabs> {
       double sw = (dSP2 * 25) / 1000;
       double wl = sw + ll;
       double ul = 1.5 * wl;
+      //
 
       double mux = alphax * ul * lx * lx;
       double muy = alphay * ul * lx * lx;
@@ -118,7 +118,7 @@ class _SimplySupportedSlabsState extends State<SimplySupportedSlabs> {
                   decoration: InputDecoration(
                     labelText: 'Short span of the slab in m ',
                   ),
-                  onSaved: (value) {
+                  onChanged: (value) {
                     lx = double.parse(value);
                   },
                   keyboardType: TextInputType.number,
